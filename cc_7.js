@@ -1,119 +1,17 @@
+// Select elements from the DOM
 
-// general styling 
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f4f8f4;
-    color: #8e0839a8;
-}
+const headlineInput = document.getElementById("headlineInput");
+const updateBtn = document.getElementById("updateBtn");
+const ctaHeadline = document.getElementById("ctaHeadline");
 
-header {
-    background-color: #2c7a3f;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 40px;
-}
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
+// Add event listener to button
 
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
+updateBtn.addEventListener("click", function () {
 
-nav a:hover {
-    color: #82d295;
-}
-.hero {
-    text-align: center;
-    padding: 60px 20px;
-    background: #dff5e3;
-}
+    const newHeadline = headlineInput.value;
 
-.hero h2 {
-    font-size: 32px;
-}
-
-// Services 
-
-.services {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 40px;
-}
-
-.service {
-    background: white;
-    padding: 20px;
-    width: 250px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform .2s;
-}
-
-.service:hover {
-    transform: translateY(-8px);
-}
-
-
-//cta form
-
-.cta-form {
-    text-align: center;
-    padding: 40px;
-}
-
-.cta-form input {
-    padding: 10px;
-    width: 220px;
-    margin-right: 10px;
-}
-
-.cta-form button {
-    padding: 10px 18px;
-    background-color: #2c7a3f;
-    color: white;
-    border: none;
-    cursor: pointer;
-}
-
-.cta-form button:hover {
-    background-color: #1e5a2c;
-}
-
-//footer 
-footer {
-    background-color: #2c7a3f;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-
-//responsive design
-@media (max-width: 768px) {
-
-    header {
-        flex-direction: column;
-        text-align: center;
+    if (newHeadline !== "") {
+        ctaHeadline.textContent = newHeadline;
     }
 
-    nav ul {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .services {
-        flex-direction: column;
-        align-items: center;
-    }
-
-}
+});
